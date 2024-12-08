@@ -1,13 +1,24 @@
 package org.example;
 
+import jakarta.persistence.*;
+
+import static jakarta.persistence.GenerationType.IDENTITY;
+
 /**
  * Ejercicio final unidad 3: base de datos biblioteca
  * ORM Hibernete
- * V_0_1 08-12-2024 Adrian Pomareta
+ * V_0_2 08-12-2024 Adrian Pomareta
  */
+@Entity
+@Table(name = "autor")
 public class Autor {
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name="id_autor")
     private int idAutor;
+    @Column(name = "nombre_autor")
     private String nombreAutor;
+    @Column(name="nacionalidad")
     private String nacionalidad;
 
     public Autor(){
